@@ -47,7 +47,6 @@ function draw() {
 }
 draw();
 
-
 const a = "Rock";
 const b = "Scissor";
 const c = "Paper";
@@ -74,6 +73,10 @@ function getHumanChoice(choice) {
     }
 }
 
+var humanScore = 0;
+var computerScore = 0;
+var count = 0;
+
 document.body.style.display = 'flex';
 document.body.style.flexDirection = 'column';
 document.body.style.alignItems = 'center';
@@ -83,10 +86,6 @@ document.body.style.backgroundColor = 'black';
 document.body.style.color = '#0ff';
 document.body.style.fontFamily = 'Arial, sans-serif';
 document.body.style.textAlign = 'center';
-
-var humanScore = 0;
-var computerScore = 0;
-var count = 0;
 
 const buttonContainer = document.createElement('div');
 buttonContainer.style.display = 'flex';
@@ -199,6 +198,18 @@ function playRound(humanChoice, computerChoice) {
 
     scoreDiv.textContent = `Human: ${humanScore} - Computer: ${computerScore}`;
     count++;
+
+    // Check after 10 clicks
+    if (count > 10) {
+        const lonelyMessage = document.createElement('div');
+        lonelyMessage.style.color = 'white';
+        lonelyMessage.style.fontSize = '24px';
+        lonelyMessage.style.fontWeight = 'bold';
+        lonelyMessage.style.textShadow = '0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff';
+        lonelyMessage.textContent = "WHY ARE YOU SO LONELY? GET A LIFE!!";
+        document.body.appendChild(lonelyMessage);
+    }
+
     if (count === 5) {
         game();
     }
