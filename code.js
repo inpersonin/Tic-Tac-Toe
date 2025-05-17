@@ -207,6 +207,7 @@ function playRound(humanChoice, computerChoice) {
         lonelyMessage.style.fontWeight = 'bold';
         lonelyMessage.style.textShadow = '0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff';
         lonelyMessage.textContent = "WHY ARE YOU SO LONELY? GET A LIFE!!";
+        lonelyMessage.style.marginTop = '40px';
         document.body.appendChild(lonelyMessage);
     }
 
@@ -234,3 +235,5 @@ function resetGame() {
     scoreDiv.textContent = "Human: 0 - Computer: 0";
     result.textContent = "Click a button to start!";
 }
+
+
